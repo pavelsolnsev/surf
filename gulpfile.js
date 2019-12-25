@@ -157,7 +157,7 @@ gulp.task('watch', function() {
 		gulp.watch('app/js/*.js', gulp.parallel('script'));
 		gulp.watch('app/*.html', gulp.parallel('html'));
 		gulp.watch('app/*.pug', gulp.parallel('pug'));
-		gulp.watch('app/img/icon-svg/images*.svg', gulp.parallel('svgSpriteBuild'));
+		gulp.watch('app/img/icon-svg/images/*.svg', gulp.parallel('svgSpriteBuild'));
 	});
 
 gulp.task('dist', gulp.series('clean', gulp.parallel('build', 'imagemin')));
