@@ -180,7 +180,7 @@
 	}
 
 	.holder-slider__descr {
-		background-size: 60%;
+		background-size: 55%;
 	}
 
 	.shop__slider-inner {
@@ -210,6 +210,12 @@
 		width: 20px;
 		right: auto;
 		left: -32px;
+	}
+
+	.sleep {
+		.holder-slider__descr {
+			background-size: 40%;
+		}
 	}
 }
 
@@ -423,6 +429,22 @@
 		&.title-summ {
 			display: block;
 			width: auto;
+		}
+	}
+
+	.sleep {
+		.holder-slider__wrap {
+			.descr {
+				.descr__head {
+					display: block;
+				}
+			}
+		}
+	}
+
+	.sleep {
+		.holder-slider__descr {
+			background-size: 55%;
 		}
 	}
 }

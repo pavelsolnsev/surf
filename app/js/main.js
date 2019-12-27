@@ -88,7 +88,7 @@ $(function() {
 	});
 	$('.slider-map').slick('setPosition');
 
-	$('.shop__slider').slick({
+	$('.shop__slider, .holder__slider').slick({
 		fade: true,
 		infinite: true,
 		prevArrow: '<img class ="slider-arrows slider-arrows__left" src="img/arrows-left.svg" alt="">',
@@ -123,115 +123,18 @@ $('.quantity-down').on('click', function(){
 	input.val(newVal);
 });
 
-$('.holder__slider').each(function() {
 $('.quantity-button').on('click', function(){
-var slider = $(this).parents('.holder-slider__info');
-	let summ = $('.summ', slider).data('nights') * $('.nights').val() + $('.summ', slider).data('guests') * $('.guests').val();
-	$('.summ', slider).html('$' + summ);
+var parents = $(this).parents('.holder-slider__info');
+	let summ = $('.summ', parents).data('nights') * $('.nights', parents).val() + $('.summ', parents).data('guests') * $('.guests', parents).val();
+	$('.summ', parents).html('$' + summ);
 });
+
+
+$('.quantity').each(function() {
+var parents = $(this).parents('.holder-slider__info');
+let summ = $('.summ', parents).data('nights') * $('.nights', parents).val() + $('.summ', parents).data('guests') * $('.guests', parents).val();
+	$('.summ', parents).html('$' + summ);
 });
-
-
-// let summ = $('.summ').data('nights') * $('.nights').val() + $('.summ').data('guests') * $('.guests').val();
-// $('.summ').html('$' + summ);
-
-
-
-
-
-	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// $('.quantity-up').on('click', function(){
-//             var spinner = $(this).parents('.quantity');
-//             input = spinner.find('input');
-//             var oldValue = parseFloat(input.val()) + 1;
-//             input.val(oldValue);
-//  });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	// $('.quantity').each(function() {
-	// 	var spinner = $(this),
-	// 	input = spinner.find('input[type="number"]'),
-	// 	btnUp = spinner.find('.quantity-up'),
-	// 	btnDown = spinner.find('.quantity-down'),
-	// 	min = input.attr('min'),
-	// 	max = input.attr('max');
-
-	// 	btnUp.click(function() {
-	// 		var oldValue = parseFloat(input.val());
-	// 		if (oldValue >= max) {
-	// 			var newVal = oldValue;
-	// 		} else {
-	// 			var newVal = oldValue + 1;
-	// 		}
-	// 		spinner.find("input").val(newVal);
-	// 		spinner.find("input").trigger("change");
-	// 	});
-
-	// 	btnDown.click(function() {
-	// 		var oldValue = parseFloat(input.val());
-	// 		if (oldValue <= min) {
-	// 			var newVal = oldValue;
-	// 		} else {
-	// 			var newVal = oldValue - 1;
-	// 		}
-	// 		spinner.find("input").val(newVal);
-	// 		spinner.find("input").trigger("change");
-	// 	});
-	// });
-
-
-
-
-
-	// $('.quantity-button').on('click', function() {
-	// 	let summ = $('.nights').val() * $('.summ').data('nights') + ($('.guests').val() - 1) * $('.summ').data('guests');
-	// 	$('.summ').html('$' + summ);
-	// });
-
-	// let summ = $('.nights').val() * $('.summ').data('nights') + ($('.guests').val() - 1) * $('.summ').data('guests');
-	// $('.summ').html('$' + summ);
-
 
 	$('.surfboard-box__circle').on('click', function(){
 		$(this).toggleClass('active');

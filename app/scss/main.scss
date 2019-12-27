@@ -25,6 +25,8 @@
  	background-color: #171919;
  	color: #fff;
  	text-transform: uppercase;
+ 	min-width: 320px;
+ 	overflow-x: hidden;
  }
 
  .container {
@@ -157,8 +159,6 @@
  	}
  }
 
-
-
  .headline-left {
  	font-size: 22px;
  	line-height: 32px;
@@ -196,7 +196,6 @@
  		top: 50%;
  	}
  }
-
 
  .surf, .holder {  
  	padding: 160px 0 210px;
@@ -363,11 +362,11 @@
  	}
  	&__line {
  		width: 40px;
-		height: 5px;
-		background-color: $green;
-		+ .menu-btn__line {
-			margin-top: 5px;
-		}
+ 		height: 5px;
+ 		background-color: $green;
+ 		+ .menu-btn__line {
+ 			margin-top: 5px;
+ 		}
  	}
  }
 
@@ -470,9 +469,23 @@
  	&__head {
  		font-weight: 800;
  		font-size: 40px;
+ 		display: flex;
+ 		align-items: center;
  	}
  	span {
  		font-weight: 100;
+ 	}
+
+ 	img {
+ 		margin-left: 20px;
+ 	}
+
+ 	ul {
+ 		li {
+ 			img {
+ 				margin-left: 0;
+ 			}
+ 		}
  	}
  }
 
@@ -504,10 +517,10 @@
 
  .surf-box {
  	&__wrapper { 
-	 	background-position: center;
-	 	background-repeat: no-repeat;
-	 	background-size: cover;
-	 	position: relative;
+ 		background-position: center;
+ 		background-repeat: no-repeat;
+ 		background-size: cover;
+ 		position: relative;
  	}
  	&__inner {
  		min-height: 750px;
@@ -617,7 +630,7 @@
  .slider-dots__content-item {
  	text-align: center;
  	img {
- 		margin-bottom: 7px;
+ 		margin: 0 auto 7px auto;
 
  	}
  }
@@ -677,6 +690,7 @@
  	position: absolute;
  	bottom: 35px;
  	transform: translateX(-50%);
+ 	z-index: 1;
  	&::before {
  		content: '';
  		position: absolute;
@@ -776,17 +790,23 @@
  	}
  }
  .holder-slider {
+
+ 	&__wrap {
+ 		margin-top: -60px;
+ 	}
+
  	&__head {
  		background-repeat: no-repeat;
  		background-position: top left;
  		min-height: 780px;
  	}
  	&__descr {
- 		padding: 180px 0 0 0;
- 		min-height: 320px;
+ 		min-height: 400px;
  		background-repeat: no-repeat;
- 		margin-top: -230px;
+ 		margin-top: -147px;
  		background-position: right top;
+ 		position: absolute;
+ 		width: 100%;
  		.descr__head {
  			position: relative;
  			padding-right: 75px;
